@@ -1,0 +1,19 @@
+@api = https://x4g53notbf.execute-api.us-west-2.amazonaws.com/dev
+GET {{api}}
+
+# Create a new task
+POST {{api}}/tasks
+Content-Type: application/json
+
+{
+    "title": "my first task"
+}
+
+# Get all tasks
+GET {{api}}/tasks
+
+# Get a task
+GET {{api}}/tasks/1000
+
+# Update task
+PUT {{api}}/tasks
