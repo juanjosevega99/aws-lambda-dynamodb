@@ -6,7 +6,7 @@ const updateTask = async event => {
   const { done } = JSON.parse(event.body);
 
   try {
-    await dynamodb.put({
+    await dynamodb.update({
       TableName: 'TaskTable',
       Key: {
         id
