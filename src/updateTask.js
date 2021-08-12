@@ -6,7 +6,7 @@ const updateTask = async event => {
   const { done } = JSON.parse(event.body);
 
   try {
-    await dynamodb.get({
+    await dynamodb.put({
       TableName: 'TaskTable',
       Key: {
         id
@@ -15,7 +15,7 @@ const updateTask = async event => {
       ExpressionAttributeValues: {
         ':done': done
       },
-      RETURN_VALUES: 'ALL_NEW'
+      ReturnValues: 'ALL_NEW'
     });
   } catch (error) {
     console.log(error);
