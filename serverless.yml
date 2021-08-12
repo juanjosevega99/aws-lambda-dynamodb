@@ -45,7 +45,7 @@ functions:
     events:
       - http:
           path: /tasks/{id}
-          method: get
+          method: put
 
 resources:
   Resources:
